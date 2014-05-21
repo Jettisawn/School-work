@@ -1,0 +1,141 @@
+#include "stdafx.h"
+#include <iostream>
+#include "windows.h"
+typedef float	M3DVector3f[3];
+extern M3DVector3f pointArray[8][4];
+
+SF3dVector F3dVector ( GLfloat x, GLfloat y, GLfloat z )
+{
+	SF3dVector tmp;
+	tmp.x = x;
+	tmp.y = y;
+	tmp.z = z;
+	return tmp;
+}
+SF3dVector AddF3dVectors (SF3dVector* u, SF3dVector* v)
+{
+	SF3dVector result;
+	result.x = u->x + v->x;
+	result.y = u->y + v->y;
+	result.z = u->z + v->z;
+	return result;
+}
+void AddF3dVectorToVector ( SF3dVector * Dst, SF3dVector * V2)
+{
+	Dst->x += V2->x;
+	Dst->y += V2->y;
+	Dst->z += V2->z;
+}
+
+
+/***************************************************************************************/
+
+CCamera::CCamera()
+{
+	//Init with standard OGL values:
+	Position = F3dVector (	0.0, 
+							0.0,
+							0.0);
+	ViewDir = F3dVector(	0.0,
+							0.0,
+							-1.0);
+	ViewDirChanged = false;
+	//Only to be sure:
+	RotatedX = RotatedY = RotatedZ = 0.0;
+}
+
+void CCamera::GetViewDir( void )
+{
+	SF3dVector Step1, Step2;
+	//Rotate around Y-axis:
+	Step1.x = cos( (RotatedY + 90.0) * PIdiv180);
+	Step1.z = -sin( (RotatedY + 90.0) * PIdiv180);
+	//Rotate around X-axis:
+	double cosX = cos (RotatedX * PIdiv180);
+	Step2.x = Step1.x * cosX;
+	Step2.z = Step1.z * cosX;
+	Step2.y = sin(RotatedX * PIdiv180);
+	//Rotation around Z-axis not yet implemented, so:
+	ViewDir = Step2;
+}
+void CCamera::Move (SF3dVector Direction)
+{
+	AddF3dVectorToVector(&Position, &Direction );
+}
+
+void CCamera::RotateY (GLfloat Angle)
+{
+	RotatedY += Angle;
+	ViewDirChanged = true;
+}
+
+void CCamera::RotateX (GLfloat Angle)
+{
+	RotatedX += Angle;
+	ViewDirChanged = true;
+}
+
+void CCamera::Render( void )
+{
+	glRotatef(-RotatedX , 1.0, 0.0, 0.0);
+	glRotatef(-RotatedY , 0.0, 1.0, 0.0);
+	glRotatef(-RotatedZ , 0.0, 0.0, 1.0);
+	glTranslatef( -Position.x, -Position.y, -Position.z );
+}
+
+void CCamera::MoveForwards( GLfloat Distance )
+{
+	bool Collision = false;
+	SF3dVector curPoints[4];
+
+	//if (ViewDirChanged) 
+	GetViewDir();
+	SF3dVector MoveVector;
+	MoveVector.x = ViewDir.x * -Distance;
+	MoveVector.y = ViewDir.y * -Distance;
+	MoveVector.z = ViewDir.z * -Distance;
+
+	SF3dVector Destination = Position;
+	AddF3dVectorToVector(&Destination, &MoveVector );
+
+	for(int i = 0; i < 8 && !Collision ; i++)
+	{
+		for(int j = 0; j < 4 && !Collision  ; j++ )
+		{
+			curPoints[j] = F3dVector(pointArray[i][j][0], pointArray[i][j][1], pointArray[i][j][2]);
+		}
+
+		if( /*Position.x    > curPoints[0].x && Position.x < curPoints[1].x
+			&& Position.x < curPoints[2].x && Position.x > curPoints[3].x
+			&& Position.y > curPoints[0].y && Position.y > curPoints[1].y
+			&& Position.y < curPoints[2].x && Position.y < curPoints[3].y
+			&& Position.z > curPoints[0].z && Position.z > curPoints[1].z
+			&& Position.z > curPoints[2].z && Position.z > curPoints[3].z
+			&& */
+			Destination.x    > curPoints[0].x && Destination.x < curPoints[1].x
+			&& Destination.x < curPoints[2].x && Destination.x > curPoints[3].x
+			&& Destination.y > curPoints[0].y && Destination.y > curPoints[1].y
+			&& Destination.y < curPoints[2].y && Destination.y < curPoints[3].y
+			&& Destination.z < curPoints[0].z && Destination.z < curPoints[1].z
+			&& Destination.z < curPoints[2].z && Destination.z < curPoints[3].z
+			)
+		{	
+			Collision = true;
+		}
+	}
+
+	if(!Collision)
+	{
+		AddF3dVectorToVector(&Position, &MoveVector );
+	}
+}
+
+void CCamera::StrafeRight ( GLfloat Distance )
+{
+	if (ViewDirChanged) GetViewDir();
+	SF3dVector MoveVector;
+	MoveVector.z = -ViewDir.x * -Distance;
+	MoveVector.y = 0.0;
+	MoveVector.x = ViewDir.z * -Distance;
+	AddF3dVectorToVector(&Position, &MoveVector );
+}
