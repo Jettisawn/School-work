@@ -1,0 +1,151 @@
+<!doctype html>
+<!--[if IEMobile 7]><html class="iem7" lang="en" dir="ltr"><![endif]-->
+<!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<html>
+  <head>
+    <title>Campus Map</title>
+    <link id='reset' href="/css/reset.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="/FancyBox/jquery.fancybox.css" type="text/css" media="screen">
+    <link id='CampusMap' href="/css/CampusMap.css" type="text/css" rel="stylesheet">
+    <link id='CampusMapSprite' href="/css/CampusMap.css" type="text/css" rel="stylesheet">
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script> 
+    
+    <script type="text/javascript" src="/js/jquery.imagemapster.js"></script>
+         
+    <script type="text/javascript" src="/FancyBox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" language="javascript" src="/js/CampusMap.js"></script>
+
+  </head>
+  <body>
+    <div id="wrap">
+    <div id="repeatingHeader">
+      <p id="OneImgText">Oregon Tech Campus Map</p>
+    </div>
+    <div id='main'></div>
+      <div id="bodyRepeat">
+        <div id="leftColumn">
+          <div style="padding:20px;">
+            <a href="#" id="general">Day Use/General Parking </a>
+</div>
+          <img name="campusmapmidHTML" src="/img/campus-map-mid.jpg" id="campusmapmidHTML" usemap="#m_campusmapmidHTML" alt="" border=0 />
+          <map name="m_campusmapmidHTML" id="m_campusmapmidHTML">
+            <!--   Parking Areas and Special Locations
+            <area shape="circle" coords="585,294, 10" href="javascript:;" alt="" />
+            <area shape="poly" coords="627,331,654,331,647,353,619,353,627,331" href="javascript:;" alt="" />
+            <area shape="poly" coords="942,71,984,73,975,89,932,87,942,71" href="javascript:;" alt="" />
+            <area shape="poly" coords="319,232,408,234,353,344,259,339,319,232" href="javascript:;" alt="" />
+            <area shape="poly" coords="604,444,689,445,666,486,580,485,604,444" href="javascript:;" alt="" />
+            <area shape="poly" coords="915,124,922,124,909,151,902,151,915,124" href="javascript:;" alt="" />
+            <area shape="poly" coords="864,290,864,285,871,285,871,289,864,290" href="javascript:;" alt="" />
+            <area shape="poly" coords="453,224,463,224,460,226,452,227,453,224" href="javascript:;" alt="" />
+            <area shape="poly" coords="303,482,309,482,308,485,302,485,303,482" href="javascript:;" alt="" />
+            <area shape="poly" coords="198,486,203,486,185,517,180,517,198,486" href="javascript:;" alt="" />
+            <area shape="poly" coords="256,286,253,292,259,292,259,287,256,286" href="javascript:;" alt="" />
+            <area shape="poly" coords="257,284,261,285,270,270,265,270,257,284" href="javascript:;" alt="" />
+            <area shape="poly" coords="745,247,768,248,768,255,740,255,745,247" href="javascript:;" alt="" />
+            <area shape="poly" coords="545,222,553,223,553,219,548,219,545,222" href="javascript:;" alt="" />
+            <area shape="poly" coords="529,233,530,228,537,228,534,233,529,233" href="javascript:;" alt="" />
+            <area shape="poly" coords="456,236,456,233,467,233,467,237,456,236" href="javascript:;" alt="" />
+            <area shape="poly" coords="445,308,452,308,449,314,441,314,445,308" href="javascript:;" alt="" />
+            <area shape="poly" coords="430,306,437,306,435,313,427,312,430,306" href="javascript:;" alt="" />
+            <area shape="poly" coords="269,425,285,425,284,430,269,430,269,425" href="javascript:;" alt="" />
+            <area shape="poly" coords="302,425,316,426,314,430,301,430,302,425" href="javascript:;" alt="" />
+            <area shape="poly" coords="289,482,302,482,301,486,289,486,289,482" href="javascript:;" alt="" />
+            <area shape="poly" coords="432,482,432,486,419,486,420,483,432,482" href="javascript:;" alt="" />
+            <area shape="poly" coords="391,499,409,499,406,503,391,503,391,499" href="javascript:;" alt="" />
+            <area shape="poly" coords="493,512,492,518,509,518,509,513,493,512" href="javascript:;" alt="" />
+            <area shape="poly" coords="816,110,842,110,841,115,815,115,816,110" href="javascript:;" alt="" />
+            <area shape="poly" coords="755,255,807,254,804,262,755,261,755,255" href="javascript:;" alt="" />
+            <area shape="poly" coords="745,215,751,215,747,223,741,223,745,215" href="javascript:;" alt="" />
+            <area shape="poly" coords="685,235,685,231,713,233,712,237,685,235" href="javascript:;" alt="" />
+            <area shape="poly" coords="545,215,578,215,576,220,543,220,545,215" href="javascript:;" alt="" />
+            <area shape="poly" coords="459,229,464,223,519,225,517,229,459,229" href="javascript:;" alt="" />
+            <area shape="poly" coords="408,275,413,257,425,255,442,233,449,233,431,276,408,275" href="javascript:;" alt="" />
+            <area shape="poly" coords="256,347,403,354,430,302,451,305,415,369,383,367,391,361,258,351,256,347" href="javascript:;" alt="" />
+            <area shape="poly" coords="225,424,292,425,279,445,213,445,225,424" href="javascript:;" alt="" />
+            <area shape="poly" data-set="parking" coords="225,458,293,460,286,481,439,481,432,499,418,499,409,514,443,514,425,547,301,547,286,515,275,515,277,491,266,486,211,483,225,458" href="javascript:;" alt="" />
+            <area shape="poly" data-set="parking" coords="479,513,663,515,645,549,459,546,479,513" href="javascript:;" alt="" />
+            <area shape="poly" coords="856,299,877,301,841,365,819,365,856,299" href="javascript:;" alt="" />
+            <area shape="poly" coords="750,205,869,206,839,260,725,253,735,232,743,232,747,223,741,223,750,205" href="javascript:;" alt="" />
+            <area shape="poly" coords="809,110,909,110,922,112,924,119,869,205,750,203,755,194,763,194,809,110" href="javascript:;" alt="" />
+            <area shape="poly" coords="701,87,791,88,787,95,700,93,701,87" href="javascript:;" alt="" />
+            <area shape="poly" coords="533,157,659,157,649,180,523,179,533,157" href="javascript:;" alt="" />
+            <area shape="poly" coords="345,162,365,121,444,121,434,139,406,158,379,165,345,162" href="javascript:;" alt="" />
+            <area shape="poly" coords="163,127,193,123,221,139,225,183,197,229,219,244,191,295,121,315,99,303,92,254,163,127" href="javascript:;" alt="" />
+            -->
+            <!--  Building locations on map -->
+            <area shape="poly" data-set="VillageThree" id='VillageThree' class="fancybox" href="/villagethree" name="VillageThree" coords="666,107,682,107,686,111,686,119,677,136,671,136,668,142,663,148,653,148,650,147,645,147,644,137,648,128,651,128,651,125,656,124,666,107" href="javascript:;" alt="" />
+            <area shape="poly" data-set="VillageTwo" id='VillageTwo' class="fancybox" href="/villagetwo" name="VillageTwo" coords="684,126,740,126,740,127,785,126,787,137,785,138,785,146,780,148,733,148,685,147,681,145,681,135,684,126" href="javascript:;" alt="" />
+            <area shape="poly" data-set="VillageOne" id='VillageOne' class="fancybox" href="/villageone" name="VillageOne" coords="693,105,726,104,727,102,771,101,770,106,772,106,769,115,765,115,764,121,732,120,731,123,726,123,726,124,691,123,689,121,689,115,693,105" href="javascript:;" alt="" />
+            <area shape="circle" data-set="Miller" id='Miller' class="fancybox" href="/miller" name="Miller" coords="185,534, 11" href="javascript:;" alt="" />
+            <area shape="poly" data-set="Dow" id='Dow' class="fancybox" href="/dow" name="Dow" coords="708,274,716,274,717,270,730,270,730,273,764,275,765,280,767,280,768,296,766,301,763,301,760,309,724,309,725,318,703,356,674,356,670,353,670,341,708,274" href="javascript:;" alt="" />
+            <area shape="poly" data-set="Health" id='Health' class="fancybox" href="/health" name="Health" coords="777,105,791,106,792,118,788,124,770,124,770,119,777,105" href="javascript:;" alt="" />
+            <area shape="circle" data-set="Information"  coords="878,289, 10" href="javascript:;" alt="" />
+            <area shape="poly" data-set="Facilities" id="Facilities" class="fancybox" href="/facilities" name="Facilities" coords="149,482,183,483,183,487,165,518,131,518,131,512,149,482" href="javascript:;" alt="" />
+            <area shape="poly" data-set="Moehl" id="Moehl" class="fancybox" href="/moehl" name="Moehl" coords="276,249,299,244,301,261,268,320,244,314,244,306,276,249" href="javascript:;" alt="" />
+            <area shape="poly" data-set="Cornett" id="Cornett" state="building" class="fancybox" href="/cornett" name="Cornett" coords="337,391,477,390,478,403,436,478,294,476,294,468,337,391" href="javascript:;" alt="" />
+            <area shape="poly" data-set="Purvine" id="Purvine" class="fancybox" href="/purvine" name="Purvine" coords="487,420,575,420,577,428,563,461,532,463,531,466,527,466,521,473,503,475,499,481,467,480,468,457,474,441,475,437,479,428,484,428,487,420" href="javascript:;" alt="" />
+            <area shape="poly" data-set="Bovin" id='Bovin' class="fancybox" href="/bovin" name="Bovin" coords="669,359,755,359,755,373,730,419,642,418,641,407,669,359" href="javascript:;" alt="" />
+            <area shape="poly" data-set="Semon" id='Semon' class="fancybox" href="/semon" name="Semon" coords="568,359,652,359,655,372,628,419,540,418,540,407,568,359" href="javascript:;" alt="" />
+            <area shape="poly" data-set="Owens" id='Owens' class="fancybox" href="/owens" name="Owens" coords="545,305,630,305,632,318,610,356,519,358,519,352,545,305" href="javascript:;" alt="" />
+            <area shape="poly" data-set="LRC" id='LRC' class="fancybox" href="/lrc" name="LRC" coords="463,294,480,294,484,299,486,316,485,320,489,328,510,328,511,350,501,366,456,367,456,369,433,368,432,348,457,297,462,297,463,294" href="javascript:;" alt="" />
+            <area shape="poly" data-set="Athletics" id='Athletics' class="fancybox" href="/athletics" name="Athletics" coords="451,233,510,233,510,255,513,260,513,272,506,278,495,277,486,287,442,288,440,286,435,285,434,264,451,233" href="javascript:;" alt="" />
+            <area shape="poly" data-set="ResidenceHall" id="ResidenceHall" class="fancybox" href="/residence" name="ResidenceHall" coords="693,159,754,159,755,172,730,214,670,214,669,202,693,159" href="javascript:;" alt="" />
+            <area shape="poly" data-set="CollegeUnion" id="CollegeUnion" class="fancybox" href="/collegeunion" Name="CollegeUnion" coords="579,209,620,210,619,212,635,212,634,213,644,213,645,217,666,218,667,238,650,253,647,259,627,267,558,266,557,264,551,263,550,258,539,258,537,254,533,254,531,244,546,218,575,217,579,209" href="javascript:;" alt="" />
+            <area shape="poly" data-set="Snell" id="Snell" class="fancybox" href="/snell" name="Snell" coords="659,255,685,256,686,273,668,305,658,305,657,308,650,308,649,306,642,304,641,289" href="javascript:;" alt="" />
+          </map>      
+        </div>
+        <div id="rightColumn">
+          <div id="MapLegendKey">
+            <p id="LegendText">Map Legend</p>
+            <p class="KeyText">1) Snell Hall</p>
+            <p class="KeyText">2) College Union</p>
+            <p class="KeyText">3) Residence Hall</p>
+            <p class="KeyText">4) Athletics</p>
+            <p class="KeyText">5) Learning Resource Center</p>
+            <p class="KeyText">6) Owens Hall</p>
+            <p class="KeyText">7) Semon Hall</p>
+            <p class="KeyText">8) Boivin Hall</p>
+            <p class="KeyText">9) Purvine Hall</p>
+            <p class="KeyText">10) Cornett Hall</p>
+            <p class="KeyText">11) Moehl Stadium</p>
+            <p class="KeyText">12) Facilities Services</p>
+            <p class="KeyText">13) Information Center</p>
+            <p class="KeyText">14) Integrated Student Health Center</p>
+            <p class="KeyText">15) Dow Center for Health Professions</p>
+            <p class="KeyText">16) Miller Hall</p>
+            <p class="KeyText">17) Sustainable Village 1</p>
+            <p class="KeyText">18) Sustainable Village 2</p>
+            <p class="KeyText">19) Sustainable Village 3</p>
+          </div>
+          <p id="sidebarNavigation"></p>
+        </div>
+        <div id=parkingLogo>
+          <img name="parking" src="/img/ParkingAreas.jpg" id="parking" usemap="#m_parking" alt="" border=0 />
+        </div>
+      </div>
+    </div>
+    <script>
+      jQuery(document).ready(function($){
+          $('img').mapster({
+            scaleMap: true,
+            singleSelect: true,
+            fillColor: '000000',
+            fillOpacity: .5,
+            stroke: true,
+            strokeColor:'ffd24f',
+            strokeWidth: 3
+            
+            });
+      }); 
+    </script>
+    
+    <div id="footer">
+      <p id="copyRight">Copyright © 2014</p>
+    </div>
+  </body>
+</html>
